@@ -3,19 +3,21 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - QDSUIBackplateGradient
+  - SamplesInfoPanel
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Overlay UI
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Stencil Layer 1
+  - Stencil Layer 2
+  - Stencil Layer 3
+  - Stencil Layer 4
+  - Stencil Layer 5
   - 
   - 
   - 
