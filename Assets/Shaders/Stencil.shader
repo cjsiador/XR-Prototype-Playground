@@ -15,7 +15,7 @@ Shader "Custom/Stencil"
 
         Pass
         {
-            BLend Zero One
+            ColorMask 0
             ZWrite Off
 
             Stencil

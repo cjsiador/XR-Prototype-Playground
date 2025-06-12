@@ -9,8 +9,6 @@ public class PanelManager : MonoBehaviour
     [SerializeField] float duration = 15f;
     [SerializeField] Quaternion startRot;
     [SerializeField] Quaternion endRot;
-    [SerializeField] List<GameObject> selectionSlotList;
-    [SerializeField] List<GameObject> selectionPrefabListt;
 
 
     void OnEnable()

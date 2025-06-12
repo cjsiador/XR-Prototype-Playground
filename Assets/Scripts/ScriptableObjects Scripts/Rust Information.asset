@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfca10e7812744d4eaa2ac436cb780d7, type: 3}
+  m_Name: Rust Information
+  m_EditorClassIdentifier: 
+  contentInfoData:
+  - StepTitle: Definition of Rust
+    ContentTitle: What is Rust?
+    ContentDescription: Rust is the reddish-brown flaky coating that forms on iron
+      and steel when exposed to oxygen and moisture.
+  - StepTitle: Oxidation Reaction
+    ContentTitle: The Chemistry Behind Rust
+    ContentDescription: Rusting occurs when iron reacts with oxygen and water to
+      form iron oxide.
+  - StepTitle: Rust Formation Conditions
+    ContentTitle: Conditions Needed
+    ContentDescription: Rust forms when moisture, oxygen, and electrolytes (like
+      salt) are present, accelerating corrosion.
+  - StepTitle: Forms of Iron Oxide
+    ContentTitle: Types of Rust
+    ContentDescription: Rust can appear in different forms; red rust, yellow rust,
+      brown rust, and black rust depending on environmental conditions.
+  - StepTitle: Structural Weakness
+    ContentTitle: Why Rust is a Problem
+    ContentDescription: Rust weakens metal structures, reducing strength, durability,
+      and potentially causing failure over time.
+  - StepTitle: Protection Methods
+    ContentTitle: Preventing Rust
+    ContentDescription: Rust can be prevented through coatings (paint, oil), galvanization
+      (zinc coating), or using stainless steel alloys.
+  - StepTitle: Inspection Techniques
+    ContentTitle: Detecting Rust
+    ContentDescription: Early detection uses visual inspections, ultrasonic testing,
+      or sensors to identify corrosion before severe damage occurs.
