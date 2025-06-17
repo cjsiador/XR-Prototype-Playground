@@ -11,6 +11,8 @@ public class SelectionButton : MonoBehaviour, IPointerEnterHandler, IPointerExit
     [Header("Animation Config")]
     public UIButtonAnimationData animationData;
 
+    public GameObject selectionObj;
+
     [SerializeField]
     private GameObject selectionParentObj;
 
@@ -21,14 +23,18 @@ public class SelectionButton : MonoBehaviour, IPointerEnterHandler, IPointerExit
     private Tween currentTween;
     private Tween colorTween;
 
-    private Image targetImage;
+    private Renderer targetRenderer;
+    private Material instanceMaterial;
 
     void Awake()
     {
         originalScale = selectionParentObj.transform.localScale;
-        targetImage = selectionPanel.GetComponent<Image>();
+        targetRenderer = selectionPanel.GetComponent<Renderer>();
 
-        targetImage.color = animationData.normalColor;
+        instanceMaterial = new Material(selectionPanel.GetComponent<Renderer>().material);
+        targetRenderer.material = instanceMaterial;
+
+        instanceMaterial.color = animationData.normalColor;
     }
 
     public void OnPointerUp(PointerEventData eventData)
@@ -47,7 +53,7 @@ public class SelectionButton : MonoBehaviour, IPointerEnterHandler, IPointerExit
         colorTween?.Kill();
 
         currentTween = selectionParentObj.transform.DOScale(originalScale * animationData.hoverScale, animationData.hoverDuration).SetEase(Ease.OutBack);
-        colorTween = targetImage.DOColor(animationData.hoverColor, animationData.colorDuration);
+        colorTween = instanceMaterial.DOColor(animationData.hoverColor, animationData.colorDuration);
 
         Debug.Log("Pointer Enter");
     }
@@ -58,7 +64,7 @@ public class SelectionButton : MonoBehaviour, IPointerEnterHandler, IPointerExit
         colorTween?.Kill();
 
         currentTween = selectionParentObj.transform.DOScale(originalScale, animationData.hoverDuration).SetEase(Ease.OutExpo);
-        colorTween = targetImage.DOColor(animationData.normalColor, animationData.colorDuration);
+        colorTween = instanceMaterial.DOColor(animationData.normalColor, animationData.colorDuration);
 
         Debug.Log("Pointer Exit");
     }
@@ -69,8 +75,8 @@ public class SelectionButton : MonoBehaviour, IPointerEnterHandler, IPointerExit
 
         Sequence colorPunchSeq = DOTween.Sequence();
 
-        colorPunchSeq.Append(targetImage.DOColor(animationData.clickColor, animationData.colorDuration * 0.5f));
-        colorPunchSeq.Append(targetImage.DOColor(animationData.normalColor, animationData.colorDuration * 0.5f));
+        colorPunchSeq.Append(instanceMaterial.DOColor(animationData.clickColor, animationData.colorDuration * 0.5f));
+        colorPunchSeq.Append(instanceMaterial.DOColor(animationData.normalColor, animationData.colorDuration * 0.5f));
 
         Debug.Log("Pointer Click");
     }

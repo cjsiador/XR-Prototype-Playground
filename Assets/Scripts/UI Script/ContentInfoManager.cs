@@ -28,6 +28,7 @@ public class ContentInfoManager : MonoBehaviour
     {
         InstanceButtonListener();
         InstanceContentInfo();
+        AssignContentInfo();
     }
 
     void InstanceButtonListener()
